@@ -56,14 +56,6 @@ Validated user data is stored temporarily in server memory.
     http://localhost:3000
 
 
-
----
-
-## ✅ README.md for **Task 3: Advanced CSS & Responsive Design**
-
-📁 Path: `task-3-responsive-ui/README.md`
-
-```md
 # Task 3: Advanced CSS Styling and Responsive Design
 
 ## Objective
