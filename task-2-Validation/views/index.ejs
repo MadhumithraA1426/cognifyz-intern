@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task 2 - Validation</title>
+
+    <!-- Inline CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef2f5;
+            min-height: 100vh;
+            margin: 0;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #0d6efd;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        button:hover {
+            background-color: #0b5ed7;
+        }
+
+        .error {
+            margin-top: 15px;
+            color: red;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .success {
+            margin-top: 15px;
+            color: green;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+
+    <!-- Inline JavaScript -->
+    <script>
+        function validateForm() {
+            const name = document.forms["userForm"]["name"].value;
+            const email = document.forms["userForm"]["email"].value;
+            const age = document.forms["userForm"]["age"].value;
+
+            if (name === "" || email === "" || age === "") {
+                alert("All fields must be filled");
+                return false;
+            }
+
+            if (age < 18) {
+                alert("Age must be 18 or above");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+
+<div class="container">
+
+    <h2>User Registration</h2>
+
+    <form name="userForm" action="/submit" method="POST" onsubmit="return validateForm()">
+        <input type="text" name="name" placeholder="Enter name">
+        <input type="email" name="email" placeholder="Enter email">
+        <input type="number" name="age" placeholder="Enter age">
+        <button type="submit">Submit</button>
+    </form>
+
+    <% if (error) { %>
+        <div class="error"><%= error %></div>
+    <% } %>
+
+    <% if (success) { %>
+        <div class="success"><%= success %></div>
+    <% } %>
+
+</div>
+
+</body>
+</html>
