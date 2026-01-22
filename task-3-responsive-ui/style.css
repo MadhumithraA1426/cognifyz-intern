@@ -1,0 +1,22 @@
+body {
+    scroll-behavior: smooth;
+}
+
+.hero {
+    height: 100vh;
+    background: linear-gradient(120deg, #266995d7, #63cbf1);
+    color: white;
+}
+
+.hero h1 {
+    font-size: 3rem;
+}
+
+.feature-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
